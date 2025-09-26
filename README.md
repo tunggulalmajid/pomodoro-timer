@@ -1,62 +1,64 @@
-Tentu, ini draf README yang bagus dan lengkap untuk repositori Pomodoro Timer Anda.
+# Pomodoro Timer 🍅
 
-Anda bisa langsung menyalin semua teks di bawah ini dan menempelkannya ke dalam file README.md di GitHub.
-
-Pomodoro Timer 🍅
 Aplikasi web timer Pomodoro yang simpel, bersih, dan modern. Dibuat dengan antarmuka yang minimalis untuk membantu Anda tetap fokus dan produktif menggunakan teknik Pomodoro.
 
-✨ Fitur Utama
-Tiga Mode Timer: Atur sesi kerja dan istirahat Anda dengan mudah.
+![Screenshot Pomodoro Timer](https://github.com/tunggulalmajid/pomodoro-timer/blob/main/screenshot-pomodoro.png?raw=true)
 
-🍅 Pomodoro: Sesi fokus selama 25 menit.
+---
 
-☕ Short Break: Istirahat singkat selama 5 menit.
+## ✨ Fitur Utama
 
-😴 Long Break: Istirahat panjang selama 15 menit.
+-   **Tiga Mode Timer**: Atur sesi kerja dan istirahat Anda dengan mudah.
+    -   🍅 **Pomodoro**: Sesi fokus selama 25 menit.
+    -   ☕ **Short Break**: Istirahat singkat selama 5 menit.
+    -   😴 **Long Break**: Istirahat panjang selama 15 menit.
+-   **Kontrol Intuitif**:
+    -   **Start / Pause**: Mulai atau jeda timer kapan saja.
+    -   **Restart**: Mengulang sesi timer yang sedang aktif.
+-   **Desain Responsif**: Tampilan yang optimal di perangkat desktop maupun mobile.
+-   **Notifikasi Judul Tab**: Waktu yang tersisa akan selalu terlihat di judul tab browser Anda.
 
-Kontrol Intuitif:
+---
 
-Start / Pause: Mulai atau jeda timer kapan saja.
+## 🚀 Teknologi yang Digunakan
 
-Restart: Mengulang sesi timer yang sedang aktif.
+Proyek ini dibangun menggunakan teknologi web standar tanpa *framework* yang berat, membuatnya cepat dan ringan.
 
-Desain Responsif: Tampilan yang optimal di perangkat desktop maupun mobile.
+-   **HTML5**: Struktur dasar aplikasi.
+-   **Tailwind CSS**: Untuk *styling* antarmuka yang modern dan responsif.
+-   **JavaScript (Vanilla)**: Menangani semua logika timer dan interaktivitas.
 
-Notifikasi Judul Tab: Waktu yang tersisa akan selalu terlihat di judul tab browser Anda, sehingga Anda tidak perlu terus-menerus memeriksa timer.
+---
 
-🚀 Teknologi yang Digunakan
-Proyek ini dibangun menggunakan teknologi web standar tanpa framework yang berat, membuatnya cepat dan ringan.
+## 📂 Cara Menjalankan Proyek Secara Lokal
 
-HTML5: Struktur dasar aplikasi.
-
-Tailwind CSS: Untuk styling antarmuka yang modern dan responsif.
-
-JavaScript (Vanilla): Menangani semua logika timer dan interaktivitas.
-
-📂 Cara Menjalankan Proyek Secara Lokal
 Ingin mencoba atau memodifikasi proyek ini di komputer Anda? Ikuti langkah-langkah berikut:
 
-Clone repositori ini:
+1.  **Clone repositori ini:**
+    ```bash
+    git clone [https://github.com/tunggulalmajid/pomodoro-timer.git](https://github.com/tunggulalmajid/pomodoro-timer.git)
+    ```
 
-Bash
+2.  **Masuk ke direktori proyek:**
+    ```bash
+    cd pomodoro-timer
+    ```
 
-git clone https://github.com/tunggulalmajid/pomodoro-timer.git
-Masuk ke direktori proyek:
+3.  **Instalasi dependensi Tailwind CSS:**
+    Proyek ini menggunakan Tailwind CLI. Anda perlu menginstal dependensinya terlebih dahulu.
+    ```bash
+    npm install
+    ```
 
-Bash
+4.  **Jalankan build script Tailwind:**
+    Untuk meng-compile file CSS, jalankan perintah berikut. Perintah ini akan memantau perubahan pada file HTML dan JS lalu secara otomatis menghasilkan file `output.css`.
+    ```bash
+    npm run build
+    ```
 
-cd pomodoro-timer
-Instalasi dependensi Tailwind CSS:
-Proyek ini menggunakan Tailwind CLI. Anda perlu menginstal dependensinya terlebih dahulu.
+5.  **Buka file `index.html`:**
+    Buka file `index.html` di browser favorit Anda. Untuk pengalaman terbaik, Anda bisa menggunakan ekstensi seperti **"Live Server"** di VS Code.
 
-Bash
+---
 
-npm install
-Jalankan build script Tailwind:
-Untuk meng-compile file CSS, jalankan perintah berikut. Perintah ini akan memantau perubahan pada file HTML dan JS lalu secara otomatis menghasilkan file output.css.
-
-Bash
-
-npm run build
-Buka file index.html:
-Buka file index.html di browser favorit Anda. Untuk pengalaman terbaik, Anda bisa menggunakan ekstensi seperti "Live Server" di VS Code.
+⭐ Jangan ragu untuk memberikan bintang jika Anda menyukai proyek ini!

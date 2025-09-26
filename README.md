@@ -2,8 +2,6 @@
 
 Aplikasi web timer Pomodoro yang simpel, bersih, dan modern. Dibuat dengan antarmuka yang minimalis untuk membantu Anda tetap fokus dan produktif menggunakan teknik Pomodoro.
 
-![Screenshot Pomodoro Timer](https://github.com/tunggulalmajid/pomodoro-timer/blob/main/screenshot-pomodoro.png?raw=true)
-
 ---
 
 ## ✨ Fitur Utama

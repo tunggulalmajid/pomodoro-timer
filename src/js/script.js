@@ -9,6 +9,7 @@ const startPauseBtn = document.getElementById("start-pause-btn");
 const startPauseText = document.getElementById("start-pause-text");
 const restartBtn = document.getElementById("restart-btn");
 let iconStart = document.getElementById("icon-start");
+const containerTime = document.querySelector("#container-time");
 
 let timePomo = 25;
 let timeShort = 0.1;
@@ -63,7 +64,10 @@ function startTimer() {
     iconStart.innerHTML = `<svg id="icon-start"xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pause" viewBox="0 0 16 16">
   <path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5m4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5"/>
 </svg>`;
-
+    containerTime.classList.remove(
+      "shadow-[12px_11px_10px_1px_rgba(0,173,181,1)]"
+    );
+    containerTime.classList.add("shadow-[12px_11px_10px_1px_rgba(145,8,31,1)]");
   }
 
   timerInterval = setInterval(() => {
@@ -91,6 +95,12 @@ function pauseTimer() {
       >
         <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
       </svg>`;
+    containerTime.classList.remove(
+      "shadow-[12px_11px_10px_1px_rgba(145,8,31,1)]"
+    );
+    containerTime.classList.add(
+      "shadow-[12px_11px_10px_1px_rgba(0,173,181,1)]"
+    );
   }
   clearInterval(timerInterval);
 }

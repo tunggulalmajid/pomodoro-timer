@@ -1,6 +1,3 @@
-// ===============================================
-// Seleksi Elemen & Inisialisasi Variabel
-// ===============================================
 const timeDisplay = document.getElementById("time");
 const pomodoroBtn = document.getElementById("pomodoro-btn");
 const shortBreakBtn = document.getElementById("short-break-btn");
@@ -8,27 +5,40 @@ const longBreakBtn = document.getElementById("long-break-btn");
 const startPauseBtn = document.getElementById("start-pause-btn");
 const startPauseText = document.getElementById("start-pause-text");
 const restartBtn = document.getElementById("restart-btn");
-let iconStart = document.getElementById("icon-start");
 const containerTime = document.querySelector("#container-time");
+const saveBtn = document.querySelector("#save-button");
+let iconStart = document.getElementById("icon-start");
+const settingsModal = document.querySelector("#settings-modal");
+const alarmSound = new Audio("./src/sounds/alarm.mp3");
 
 let timePomo = 25;
 let timeShort = 0.1;
 let timeLong = 15;
 
-const DURATION = {
+let DURATION = {
   pomodoro: timePomo * 60,
   "short-break": timeShort * 60,
   "long-break": timeLong * 60,
 };
 
+function getTime() {
+  timePomo = parseInt(document.querySelector("#pomodoro-input").value);
+  timeShort = parseInt(document.querySelector("#short-break-input").value);
+  timeLong = parseInt(document.querySelector("#long-break-input").value);
+
+  DURATION = {
+    pomodoro: timePomo * 60,
+    "short-break": timeShort * 60,
+    "long-break": timeLong * 60,
+  };
+
+  restartTimer();
+}
+
 let timerInterval = null;
 let timeLeft = DURATION.pomodoro;
 let currentMode = "pomodoro";
 let isRunning = false;
-
-// ===============================================
-// Fungsi-Fungsi Kunci
-// ===============================================
 
 function formatTime(seconds) {
   const minutes = Math.floor(seconds / 60);
@@ -75,6 +85,7 @@ function startTimer() {
     updateDisplay();
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
+      alarmSound.play();
       alert(`${currentMode} session has finished!`);
       restartTimer();
     }
@@ -116,18 +127,17 @@ function toggleStartPause() {
 function restartTimer() {
   pauseTimer();
   timeLeft = DURATION[currentMode];
+  pauseTimer();
   updateDisplay();
 }
 
-// ===============================================
-// Event Listeners
-// ===============================================
 pomodoroBtn.addEventListener("click", () => switchMode("pomodoro"));
 shortBreakBtn.addEventListener("click", () => switchMode("short-break"));
 longBreakBtn.addEventListener("click", () => switchMode("long-break"));
 
 startPauseBtn.addEventListener("click", toggleStartPause);
 restartBtn.addEventListener("click", restartTimer);
+saveBtn.addEventListener("click", getTime);
 
 // Inisialisasi tampilan saat halaman dimuat
 window.addEventListener("DOMContentLoaded", () => {

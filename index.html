@@ -8,7 +8,7 @@
     <link rel="icon" href="" />
   </head>
   <body class="bg-primary text-white">
-    <header>
+    <header class="pt-10">
       <h1 class="text-center text-4xl font-bold mt-10 sm:mt-20">Pomodoro.</h1>
     </header>
 
@@ -33,9 +33,89 @@
           Long Break
         </button>
       </div>
-
       <div
-        class="mt-10 flex h-70 w-80 items-center justify-center rounded-2xl bg-secondary shadow-[12px_11px_10px_1px_rgba(0,173,181,1)] sm:h-80 sm:w-120" id="container-time"
+        class="settings-modal-container w-140 bg-secondary border-white border-1 rounded-xl px-5 py-7 backdrop-blur-lg text-white mx-auto my-auto"
+        popover
+        id="settings-modal"
+      >
+        <form>
+          <div class="flex justify-between">
+            <h2>Settings</h2>
+            <button
+              popovertarget="settings-modal"
+              popovertargetaction="hide"
+              type="button"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="currentColor"
+                class="bi bi-x cursor-pointer"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="w-auto h-[2px] bg-white mt-5 mb-7"></div>
+          <h3>Time (Minute)</h3>
+          <div class="flex justify-between mt-4">
+            <div class="flex flex-col gap-2">
+              <label for="pomodoro-input">Pomodoro</label>
+              <input
+                type="number"
+                value="25"
+                min="1"
+                required
+                id="pomodoro-input"
+                class="bg-white w-30 h-7 rounded-lg text-black font-semibold px-3"
+              />
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="short-break-input">short break</label>
+              <input
+                type="number"
+                value="5"
+                min="1"
+                required
+                id="short-break-input"
+                class="bg-white w-30 h-7 rounded-lg font-semibold px-3 text-black"
+              />
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="long-break-input">long break</label>
+              <input
+                type="number"
+                value="15"
+                min="1"
+                required
+                id="long-break-input"
+                class="bg-white w-30 h-7 rounded-lg font-semibold px-3 text-black"
+              />
+            </div>
+          </div>
+          <div class="w-auto h-[2px] bg-white mt-10"></div>
+          <div class="flex justify-end">
+            <button
+              type="button"
+              class="bg-blue-primary w-30 h-9 rounded-lg mt-6 hover:scale-105 cursor-pointer hover:opacity-75"
+              id="save-button"
+              popovertarget="settings-modal"
+              popovertargetaction="hide"
+              type="button"
+            >
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+      <div
+        class="mt-10 flex h-70 w-80 items-center justify-center rounded-2xl bg-secondary shadow-[12px_11px_10px_1px_rgba(0,173,181,1)] sm:h-80 sm:w-120"
+        id="container-time"
       >
         <h2 id="time" class="text-7xl font-extrabold">25:00</h2>
       </div>
@@ -82,8 +162,11 @@
           <h5 id="start-pause-text">Start</h5>
         </div>
 
-        <div
+        <button
+          type="button"
           class="flex cursor-pointer flex-col items-center gap-[4px] p-2 hover:opacity-75 hover:scale-105"
+          id="settings-btn"
+          popovertarget="settings-modal"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +180,7 @@
             />
           </svg>
           <h5>Settings</h5>
-        </div>
+        </button>
       </div>
     </main>
 

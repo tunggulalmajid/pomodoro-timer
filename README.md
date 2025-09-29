@@ -45,13 +45,13 @@ Ingin mencoba atau memodifikasi proyek ini di komputer Anda? Ikuti langkah-langk
 3.  **Instalasi dependensi Tailwind CSS:**
     Proyek ini menggunakan Tailwind CLI. Anda perlu menginstal dependensinya terlebih dahulu.
     ```bash
-    npm install
+    npm install     
     ```
 
 4.  **Jalankan build script Tailwind:**
     Untuk meng-compile file CSS, jalankan perintah berikut. Perintah ini akan memantau perubahan pada file HTML dan JS lalu secara otomatis menghasilkan file `output.css`.
     ```bash
-    npm run build
+    npm run dev
     ```
 
 5.  **Buka file `index.html`:**
